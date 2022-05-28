@@ -1,0 +1,24 @@
+.color{
+    color: green;
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover { background-color: green }
+  
+  .button:active {
+    background-color: darkgreen;
+    box-shadow: 0 5px grey;
+    transform: translateY(4px);
+  }

@@ -1,0 +1,24 @@
+.color{
+    color: blue;
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: lightblue;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover { background-color: blue }
+  
+  .button:active {
+    background-color: darkblue;
+    box-shadow: 0 5px grey;
+    transform: translateY(4px);
+  }
