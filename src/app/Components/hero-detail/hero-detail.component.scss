@@ -1,0 +1,46 @@
+.header{
+   
+    background-color:red;
+    height:50px;
+    text-align:center;
+}
+
+.body{
+    padding-left: 20px;
+    background-color: pink;
+    text-align:center;
+}
+
+
+.btn-div{
+    
+    display:flex;
+    justify-content: center;
+}
+
+.btn{
+    padding: 10px 10px 10px 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+    border-radius: 25px;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 50px;
+    margin: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    border-radius: 25px;
+  }
+
+.footer{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
