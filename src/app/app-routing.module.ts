@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'page1', component: Page1Component },
   { path: 'page2', component: Page2Component },
   { path: 'page3', component: Page3Component }, 
-  { path: 'form', component: FormComponent}
+  { path: 'form', component: FormComponent },
+  // { path: 'Info', component: FormComponent }
 
 ];
 

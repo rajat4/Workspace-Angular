@@ -1,0 +1,134 @@
+<!-- <p>hero works!</p> -->
+
+<body>
+    <form [formGroup]="heroForm" >
+      <div class="form-group">
+        <label class="center-block">Name
+          <input class="form-control" formControlName="name">
+        </label>
+      
+        <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This field is not valid</span>
+    
+      </div>
+      <div class="form-group">
+        <label class="center-block">Email
+          <input class="form-control" formControlName="email">
+        </label>
+      
+        <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This is not valid email</span>
+    
+      </div>
+      <div class="form-group">
+        <label class="center-block">Street
+          <input class="form-control" formControlName="street">
+        </label>
+    
+        <span class="validatorMsg" *ngIf="heroForm.invalid">This Street is not valid</span>
+    
+      </div>
+      <div class="form-group">
+        <label class="center-block">City
+          <input class="form-control" formControlName="city">
+        </label>
+      </div>
+    
+      <span class="validatorMsg" *ngIf="heroForm.invalid">This city is not valid</span>
+    
+    
+      <div class="form-group">
+    <label class="center-block">State</label>
+    
+      <input class="form-control" type="text" name="city" list="cityname">
+        <datalist id="cityname">
+          <option value="Boston">
+          <option value="Cambridge">
+        </datalist>
+      </div>
+    
+      <span class="validatorMsg" *ngIf="heroForm.invalid">This state is not valid</span>
+    
+      <div class="form-group">
+        <label class="center-block">Zip Code
+          <input class="form-control" formControlName="zip">
+        </label>
+      </div>
+    
+      <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary">Submit Form</button>
+    
+      <div class="form-group radio">
+        <h4>Super power:</h4>
+        <label class="center-block"><input type="checkbox" formControlName="power" value="flight"> Flight</label>
+        <label class="center-block"><input type="checkbox" formControlName="power" value="x-ray vision"> X-ray vision</label>
+        <label class="center-block"><input type="checkbox" formControlName="power" value="strength"> Strength</label>
+      </div>
+    
+      <form>
+        <p>Please select your preffered way to contact:</p>
+        <input type="radio" name="contact"> Email
+      
+        <input type="radio" name="contact"> Phone
+      
+        <input type="radio" name="contact"> Message
+    
+        <input type="radio" name="contact"> DM on IG
+      </form>
+      <div class="checkbox">
+        <label class="center-block">
+          <input type="checkbox" formControlName="sidekick">I have a sidekick.
+        </label>
+      </div>
+    </form>
+    
+    
+    
+    
+        <button (click)="getPosts()" class="btn btn-primary">Get Posts</button>
+    
+        <div *ngFor = "let post of posts | async" class="padding">
+          {{ posts | json }}
+        </div>
+    
+      </body>
+
+      <div class="panel-body" formGroupName="address">
+        <div class="form-group">
+          <label for="address" class="col-sm-3 control-label">Business Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="street" placeholder="Business Address">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="website" class="col-sm-3 control-label">Website</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="website" placeholder="website">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="telephone" class="col-sm-3 control-label">Telephone</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="mobile" placeholder="telephone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="email" placeholder="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="page id" class="col-sm-3 control-label">Facebook Page ID</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="pageId" placeholder="facebook page id">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="about" class="col-sm-3  control-label"></label>
+          <div class="col-sm-3">
+            span class="btn btn-success form-control" (click)="openGeneralPanel()">Back</span>
+          </div>
+          <label for="about" class="col-sm-2  control-label"></label>
+          <div class="col-sm-3">
+            <button class="btn btn-success form-control" [disabled]="heroForm.invalid" (click)="Info()">Continue</button>
+          </div>
+        </div>
+      </div>
