@@ -1,67 +1,168 @@
 <!-- <p>hero works!</p> -->
 
-<body>
-    <form [formGroup]="heroForm" >
+<body class="body">
+
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+    <div class="form-group">
+      <label class="center-block">Name
+        <input class="form-control" type="text" placeholder="Enter Name" formControlName="user">
+      </label>
+      
+      <span class="validatorMsg" *ngIf="user && user.invalid && user.touched">This field is required</span>  
+      <br><br>
+      <label class="center-block">Email
+        <input class="form-control" type="text" placeholder="Enter Email" formControlName="email">
+      </label>
+      
+      <span class="validatorMsg" *ngIf="email && email.invalid && email.touched">This is not a valid email</span>  
+      <br><br>
+      <label class="center-block">Password
+        <input class="form-control" type="password" placeholder="Enter Password" formControlName="password">
+      </label>
+      <br><br>
+
+      <div class="btn-div">
+         <button class="btn btn-primary">Login</button>
+      </div>
+
+    </div>
+  </form>
+
+    <form [formGroup]="heroForm" (ngSubmit)="heroLoginUser()">
       <div class="form-group">
         <label class="center-block">Name
-          <input class="form-control" formControlName="name">
+          <input class="form-control" formControlName="name" placeholder="Enter Your Name" id="getName">
         </label>
       
         <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This field is not valid</span>
+        <div class="validatorMsg" *ngIf="0">This Name is not valid</div>
+
     
       </div>
       <div class="form-group">
         <label class="center-block">Email
-          <input class="form-control" formControlName="email">
+          <input class="form-control" type="email" formControlName="email" placeholder="Enter Your Email">
         </label>
       
         <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This is not valid email</span>
-    
+        <br>
+        <!-- <span class="validatorMsg" *ngIf="email==nitesh@capgemini.com">This is nitesh's email</span> -->
+
+        <!-- <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This is not capgemini email</span> -->
+
       </div>
+
       <div class="form-group">
         <label class="center-block">Street
-          <input class="form-control" formControlName="street">
+          <input class="form-control" formControlName="street" placeholder="Enter Your Street">
         </label>
     
-        <span class="validatorMsg" *ngIf="heroForm.invalid">This Street is not valid</span>
+        <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This Street is not valid</span>
     
       </div>
       <div class="form-group">
         <label class="center-block">City
-          <input class="form-control" formControlName="city">
+          <input class="form-control" formControlName="city" placeholder="Enter Your City">
         </label>
+        <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This City is not valid</span>
       </div>
     
-      <span class="validatorMsg" *ngIf="heroForm.invalid">This city is not valid</span>
+            
+          <!-- <div *ngIf="(Email.invalid && Email.touched) || Email.dirty">
+            <small *ngIf="Email.errors?.required" class="text-danger">Primary email is required</small>
+          
+            <small *ngIf="Email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+          </div>
+
+
+          <div *ngIf="(Name.invalid && Name.touched) || Name.dirty">
+            <small *ngIf="Email.errors?.required" class="text-danger">Name is required</small>
+            <small *ngIf="Email.errors?.pattern" class="text-danger">Please provide a valid Name</small>
+          </div> -->
     
     
       <div class="form-group">
-    <label class="center-block">State</label>
+      <label class="center-block">State</label>
+      
+        <input class="form-control" type="text" name="city" list="StateName" placeholder="Enter Your State">
+        
+          <datalist id="StateName">
+            <option value="Maharashtra">
+            <option value="Karnataka">
+            <option value="Uttarakhand">
+            <option value="Jammu & Kashmir">
+            <option value="Goa">
+            <option value="Delhi NCR">
+            <option value="Mizoram">
+            <option value="Himanchal Pradesh">
+          </datalist>
+          <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This State is not valid</span>
+        </div>
     
-      <input class="form-control" type="text" name="city" list="cityname">
-        <datalist id="cityname">
-          <option value="Boston">
-          <option value="Cambridge">
-        </datalist>
-      </div>
-    
-      <span class="validatorMsg" *ngIf="heroForm.invalid">This state is not valid</span>
+      
     
       <div class="form-group">
         <label class="center-block">Zip Code
-          <input class="form-control" formControlName="zip">
+          <input class="form-control"  placeholder="Enter Zip Code">
         </label>
+        <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This Zip is not valid</span>
+        <br>
+        <!-- <span class="validatorMsg" *ngIf="zip === 400302">This Zip is 400302</span> -->
       </div>
+
+      <div class="form-group">
+        <label class="center-block">Comments</label>
+        <div class="txt-area">
+          <!-- <textarea aria-setsize="300px" ></textarea> -->
+          <textarea placeholder="Enter all your negative as well as positive comments in this textarea"></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="center-block">Feedback
+          <textarea class="form-control"  placeholder="Enter Your Valuable feedback in this textarea "></textarea>
+        </label> 
+        <!-- <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This Zip is not valid</span> -->
+        <br>
+        <!-- <span class="validatorMsg" *ngIf="zip === 400302">This Zip is 400302</span> -->
+      </div>
+
+
+      <!-- <input type="submit"><label>Submit</label> -->
+    <div class="btn-div">
+      <!-- <input type="submit"> -->
+      <button (onclick)="submitForm()" type="button" class="btn btn-primary">Submit Form</button>
+    </div>
+    <br>
+    <div class="btn-div">
+      <button class="btn btn-primary" >Sign Up</button>
+   </div>
+  
+    <div class="abc">
+      <div class="animate-me">Complete the Form for Exciting Offers and Enter Lucky Draw!</div>
+    </div>
+
     
-      <button [disabled]="heroForm.invalid" type="button" class="btn btn-primary">Submit Form</button>
-    
-      <div class="form-group radio">
+
+</form>
+
+<button (click)="welcome()">
+  welcome page
+</button>
+  <!-- <div class="btn-div">
+    <button (click)="goHome()">Home</button>
+  </div>
+  <div class="btn-div">
+    <button (onclick)="submitForm()" type="button" class="btn btn-primary" routerLink="home">Home</button>
+  </div> -->
+  
+      <!-- <div class="form-group radio">
         <h4>Super power:</h4>
-        <label class="center-block"><input type="checkbox" formControlName="power" value="flight"> Flight</label>
-        <label class="center-block"><input type="checkbox" formControlName="power" value="x-ray vision"> X-ray vision</label>
-        <label class="center-block"><input type="checkbox" formControlName="power" value="strength"> Strength</label>
+        <label class="center-block"><input type="checkbox"  value="flight"> Flight</label>
+        <label class="center-block"><input type="checkbox"  value="x-ray vision"> X-ray vision</label>
+        <label class="center-block"><input type="checkbox"  value="strength"> Strength</label>
       </div>
-    
+    <div class="gen">
       <form>
         <p>Please select your preffered way to contact:</p>
         <input type="radio" name="contact"> Email
@@ -72,6 +173,7 @@
     
         <input type="radio" name="contact"> DM on IG
       </form>
+    </div>
       <div class="checkbox">
         <label class="center-block">
           <input type="checkbox" formControlName="sidekick">I have a sidekick.
@@ -124,11 +226,11 @@
         <div class="form-group">
           <label for="about" class="col-sm-3  control-label"></label>
           <div class="col-sm-3">
-            span class="btn btn-success form-control" (click)="openGeneralPanel()">Back</span>
+            <div> class="btn btn-success form-control" (click)="openGeneralPanel()">Back</div>
           </div>
           <label for="about" class="col-sm-2  control-label"></label>
           <div class="col-sm-3">
             <button class="btn btn-success form-control" [disabled]="heroForm.invalid" (click)="Info()">Continue</button>
           </div>
         </div>
-      </div>
+      </div> -->

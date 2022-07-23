@@ -1,0 +1,48 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "RBT"
+    }
+  ],
+  "comments": [
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "SilverSurfer"
+  },
+  "company": {
+    "details": {
+      "nitesh": [
+        "nitesh@capgemini.com",
+        "nitesh@dvb.nl"
+      ],
+      "kaushal": [
+        "kaushal@capgemini.com"
+      ],
+      "premkumar": "premkumar@capgemini.com",
+      "email3": "pallavi@capgemini.com",
+      "email4": "yamini@capgemini.com"
+    },
+    "options": {
+      "main": "abc",
+      "isConfigured": "Yes",
+      "Language": "English",
+      "credit": [
+        "link1",
+        "link2"
+      ],
+      "styles": [
+        "bootstrap",
+        "material-start",
+        "material-you"
+      ],
+      "scripts": []
+    }
+  }
+}

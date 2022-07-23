@@ -8,6 +8,8 @@ import { Page3Component } from './Pages/page3/page3.component';
 import { SubmitComponent } from './Components/submit/submit.component';
 import { CancelComponent } from './Components/cancel/cancel.component';
 import { FormComponent } from './form/form.component';
+import { HomeComponent } from './home/home.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: FormComponent}
@@ -17,7 +19,10 @@ const routes: Routes = [
   { path: 'page2', component: Page2Component },
   { path: 'page3', component: Page3Component }, 
   { path: 'form', component: FormComponent },
-  // { path: 'Info', component: FormComponent }
+  { path: 'Info', component: FormComponent },
+  { path: 'home', component: HomeComponent},
+  { path: 'welcome', component: WelcomeComponent, pathMatch: 'full'},
+
 
 ];
 

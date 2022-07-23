@@ -1,39 +1,80 @@
-<h2>Hero Detail</h2>
+<!-- <h2>Hero Detail</h2> -->
 <!-- <h3><i>A FormGroup with multiple FormControls</i></h3> -->
-<form [formGroup]="heroForm" novalidate>
+<body>
+  <!-- <button (click)="getEmployees1()"></button> -->
+<form [formGroup]="heroForm" >
   <div class="form-group">
-    <label class="center-block">Name:
+    <label class="center-block">Name
       <input class="form-control" formControlName="name">
     </label>
+  
+    <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This field is not valid</span>
+
   </div>
   <div class="form-group">
-    <label class="center-block">Street:
+    <label class="center-block">Email
+      <input class="form-control" formControlName="email">
+    </label>
+  
+    <span class="validatorMsg" *ngIf="heroForm.invalid && heroForm.touched">This is not capgemini email</span>
+
+  </div>
+  <div class="form-group">
+    <label class="center-block">Street
       <input class="form-control" formControlName="street">
     </label>
+
+    <!-- <span class="validatorMsg" *ngIf="heroForm.invalid">This field is not valid</span> -->
+
   </div>
   <div class="form-group">
-    <label class="center-block">City:
+    <label class="center-block">City
       <input class="form-control" formControlName="city">
     </label>
   </div>
-  <div class="form-group">
-    <label class="center-block">State:
+
+  <!-- <div class="form-group">
+    <label class="center-block">State
       <select class="form-control" formControlName="state">
-          <option *ngFor="let state of states" [value]="state">{{state}}</option>
+          <option *ngFor="let state of states1" [value]="state">{{state}}</option>
       </select>
     </label>
-  </div>
+  </div> -->
   <div class="form-group">
-    <label class="center-block">Zip Code:
+<label class="center-block">State</label>
+
+  <input class="form-control" type="text" name="city" list="cityname">
+    <datalist id="cityname">
+      <option value="Boston">
+      <option value="Cambridge">
+    </datalist>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Zip Code
       <input class="form-control" formControlName="zip">
     </label>
   </div>
+
+  <button class="form-group" [disabled]="heroForm.invalid" type="button" class="btn btn-primary">Submit Form</button>
+
   <div class="form-group radio">
     <h4>Super power:</h4>
-    <label class="center-block"><input type="radio" formControlName="power" value="flight">Flight</label>
-    <!-- <label class="center-block"><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
-    <label class="center-block"><input type="radio" formControlName="power" value="strength">Strength</label> -->
+    <label class="center-block"><input type="checkbox" formControlName="power" value="flight"> Flight</label>
+    <label class="center-block"><input type="checkbox" formControlName="power" value="x-ray vision"> X-ray vision</label>
+    <label class="center-block"><input type="checkbox" formControlName="power" value="strength"> Strength</label>
   </div>
+
+  <form>
+    <p>Please select your preffered way to contact:</p>
+    <input type="radio" name="contact"> Email
+  
+    <input type="radio" name="contact"> Phone
+  
+    <input type="radio" name="contact"> Message
+
+    <input type="radio" name="contact"> DM on IG
+  </form>
   <div class="checkbox">
     <label class="center-block">
       <input type="checkbox" formControlName="sidekick">I have a sidekick.
@@ -42,34 +83,50 @@
 </form>
 
 
-<p>Form value: {{ heroForm.value | json }}</p>
+<!-- <p>Form value: {{ heroForm.value | json }}</p> -->
 
-<div formGroupName="address" class="well well-lg">
+<!-- <div formGroupName="address" class="well well-lg">
     <h4>Secret Lair</h4>
+
     <div class="form-group">
-      <label class="center-block">Street:
+      <label class="center-block">Street
         <input class="form-control" formControlName="street">
       </label>
     </div>
+
     <div class="form-group">
-      <label class="center-block">City:
+      <label class="center-block">City
         <input class="form-control" formControlName="city">
       </label>
-    </div>
-    <div class="form-group">
-      <label class="center-block">State:
+    </div> -->
+
+
+
+    <!-- <div class="form-group">
+      <label class="center-block">State
         <select class="form-control" formControlName="state">
           <option *ngFor="let state of states" [value]="state">{{state}}</option>
         </select>
       </label>
+    </div> -->
+
+    <!-- <div class="form-group">
+      <label class="center-block">State</label>
+      
+        <input class="form-control" type="text" name="city" list="cityname1">
+          <datalist id="cityname1">
+            <option value="Maharashtra">
+            <option value="Karnataka">
+          </datalist>
     </div>
+    
     <div class="form-group">
-      <label class="center-block">Zip Code:
+      <label class="center-block">Zip Code
         <input class="form-control" formControlName="zip">
       </label>
     </div>
 
-    <button [disabled]="" type="button" class="btn btn-primary">Submit Form</button>
+    <button [disabled]="" type="button" class="btn btn-primary">Submit Form</button> -->
 
     <!-- <div class="container pt-5">
       <div class="row justify-content-sm-center pt-5">
@@ -101,3 +158,13 @@
           </div>
       </div>
     </div> -->
+
+    <!-- <h1>Angular HTTP Basics</h1> -->
+
+    <button (click)="getPosts()" class="btn btn-primary">Get Posts</button>
+
+    <div *ngFor = "let post of posts | async" class="padding">
+      {{ posts | json }}
+    </div>
+
+  </body>

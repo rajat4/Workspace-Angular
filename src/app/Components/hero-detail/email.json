@@ -1,0 +1,27 @@
+ {
+     "details":{
+        "email0": [ "nitesh@capgemini.com", "nitesh@dvb.nl"],
+        "email1": "kaushal@capgemini.com",
+        "email2": "nitesh@capgemini.com",
+        "email3": "pallavi@capgemini.com",
+        "email4": "yamini@capgemini.com"
+       
+     },
+
+    "options": {
+      "main": "abc",
+    
+      "isConfigured": "Yes",
+      "Language": "English",
+      "credit": [
+        "link1",
+        "link2"
+      ],
+      "styles": [
+        "bootstrap",
+        "material-start",
+        "material-you"
+      ],
+      "scripts": []
+ }
+}

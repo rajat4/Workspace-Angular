@@ -16,6 +16,11 @@ import { Page2Component } from './Pages/page2/page2.component';
 import { Page3Component } from './Pages/page3/page3.component';
 import { CustomerComponent } from './Components/customer/customer.component';
 import { HeroDetailComponent } from './Components/hero-detail/hero-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HeroComponent } from './Components/hero/hero.component';
+import { HomeComponent } from './home/home.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -28,14 +33,20 @@ import { HeroDetailComponent } from './Components/hero-detail/hero-detail.compon
     Page3Component,
     CustomerComponent,
     HeroDetailComponent,
-
+    HeroComponent,
+    HomeComponent,
+    EmployeeListComponent,
+    WelcomeComponent,
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule
+    BrowserAnimationsModule, 
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [CustomerComponent]
